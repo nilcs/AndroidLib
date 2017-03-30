@@ -5,9 +5,6 @@ import android.widget.Toast;
 
 /**
  * 通用工具类：弹出提示、检测网络等
- * 
- * @author Wayne
- * @version 1.0.1
  */
 public class CommonHelper {
 
@@ -40,14 +37,14 @@ public class CommonHelper {
 			Toast.makeText(context, str, durationType).show();
 		}
 	}
+
 	/**
+	 *
 	 * 拼接网络连接地址
-	 * 
-	 * @param context
-	 * @param strings
 	 *            string[0]=192.168.0.1,string[1]=web
+	 * @param strings
 	 * @return http://192.168.0.1/web
-	 */
+     */
 	public static String splStrToWebUrl(String... strings) {
 		StringBuilder sBuilder = new StringBuilder("http://");
 		int i = 0;

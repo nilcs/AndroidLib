@@ -20,9 +20,7 @@ import android.telephony.TelephonyManager;
 
 /**
  * 程序运行统计
- * 
- * @author Wayne
- * 
+ *
  */
 public class AppStatHelper {
 	/**

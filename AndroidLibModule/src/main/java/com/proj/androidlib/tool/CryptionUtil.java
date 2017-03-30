@@ -9,9 +9,7 @@ import android.util.Log;
 
 /**
  * 加解密工具类
- * 
- * @author Wayne
- * 
+ *
  */
 public class CryptionUtil {
 	/**

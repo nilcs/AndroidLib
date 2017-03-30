@@ -7,9 +7,6 @@ import android.content.Context;
 
 /**
  * 应用程序Activity管理类：用于Activity管理和应用程序退出
- * 
- * @author Ivan
- * @date 2013-5-6 下午10:04:29
  */
 public class AppManager {
 	private static Stack<Activity> mActivitiesStack;

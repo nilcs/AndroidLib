@@ -10,9 +10,7 @@ import android.net.NetworkInfo;
 
 /**
  * 监听目前是否有活动的网络
- * 
- * @author Wayne
- * 
+ *
  */
 public class ConnectionChangeReceiver extends BroadcastReceiver {
 	/**

@@ -2,9 +2,6 @@ package com.proj.androidlib.model;
 
 /**
  * 下载文件
- *
- * @author Wayne
- *
  */
 public class DownFile {
     /**

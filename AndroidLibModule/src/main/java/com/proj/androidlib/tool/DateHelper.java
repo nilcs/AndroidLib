@@ -13,9 +13,6 @@ import android.text.TextUtils;
 
 /**
  * 日期时间的工具类
- * 
- * @version 2.0
- * @author Wayne
  */
 
 public class DateHelper {

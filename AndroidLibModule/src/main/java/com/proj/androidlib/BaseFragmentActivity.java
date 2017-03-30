@@ -8,7 +8,6 @@ import android.view.View.OnClickListener;
 
 /**
  * FragmentActivity基类
- * @author Wayne
  *
  */
 public abstract class BaseFragmentActivity extends FragmentActivity  implements

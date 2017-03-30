@@ -140,7 +140,7 @@ public class FileDownloadHelper {
 	/**
 	 * 每下载一个文件回传一次消息（这里会回传文件索引按需使用）
 	 * 
-	 * @param mOneEndSendWhat
+	 * @param oneEndSendWhat
 	 */
 	public void setOneEndSendWhat(int oneEndSendWhat) {
 		this.mOneEndSendWhat = oneEndSendWhat;

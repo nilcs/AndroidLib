@@ -15,9 +15,6 @@ import android.content.pm.PackageManager;
 
 /**
  * 应用程序类
- * 
- * @author Ivan
- * @date 2013-8-21 下午3:12:33
  */
 public class AppcationHelper {
 	private Context mContext;
@@ -58,8 +55,6 @@ public class AppcationHelper {
 
 	/**
 	 * 获取应用程序当前版本号
-	 * 
-	 * @param context
 	 * @return 版本号，默认：1
 	 */
 	public int getAppVersionCode() {
@@ -77,8 +72,6 @@ public class AppcationHelper {
 
 	/**
 	 * 获取应用程序当前版本名称
-	 * 
-	 * @param context
 	 * @return 版本名称，默认：1.0
 	 */
 	public String getAppVersionName() {
@@ -96,8 +89,6 @@ public class AppcationHelper {
 
 	/**
 	 * 获取应用程序名称
-	 * 
-	 * @param context
 	 * @return 应用程序名称
 	 */
 	public String getAppName() {
@@ -116,13 +107,11 @@ public class AppcationHelper {
 
 	/**
 	 * 检测是否有更新
-	 * 
 	 * @param versionCode
 	 * @param appId
 	 * @param appSecret
-	 * @param deviceType
-	 * @return 版本更新类
-	 */
+     * @return
+     */
 	public UpdateApk getUpdate(int versionCode, String appId, String appSecret) {
 		UpdateApk updateApk = null;
 		try {

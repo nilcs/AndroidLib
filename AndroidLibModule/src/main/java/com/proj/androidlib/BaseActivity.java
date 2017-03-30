@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.View.OnClickListener;
 
 /**
- * 所以Activity的基类，必须实现绑定组件和注册事件功能
- * 
- * @author wayne
- * 
+ * 所有Activity的基类，必须实现绑定组件和注册事件功能
  */
 public abstract class BaseActivity extends Activity implements
 		OnClickListener {

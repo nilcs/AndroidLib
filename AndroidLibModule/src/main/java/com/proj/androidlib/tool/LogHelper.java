@@ -11,9 +11,6 @@ import android.util.Log;
 
 /**
  * 日志工具类，记录类命、方法名、行数
- * 
- * @author Wayne
- * @version 1.0.1
  */
 public class LogHelper {
 	/**

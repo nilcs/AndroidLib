@@ -8,10 +8,7 @@ import android.os.StatFs;
 
 /**
  * SD卡和文件操作工具类
- * 
- * @version 1.0
- * @author Wayne
- * 
+ *
  */
 public class SdCardAndFileHelper {
 	private SdCardAndFileHelper() {

@@ -7,22 +7,23 @@ import com.proj.androidlib.model.DownFile;
 import com.proj.androidlib.tool.FileDownloadHelper;
 import com.proj.androidlib.tool.SdCardAndFileHelper;
 
+import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.support.v7.app.NotificationCompat;
 import android.text.TextUtils;
 import android.widget.RemoteViews;
 
 /**
  * 更新软件服务,需Intent传入APP_NAME:软件名称，URL：下载地址
- * 
- * @author Wayne
  * 
  */
 public class SoftUpdateService extends Service {
@@ -121,6 +122,7 @@ public class SoftUpdateService extends Service {
 		super.onStart(intent, startId);
 	}
 
+
 	Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
@@ -142,14 +144,18 @@ public class SoftUpdateService extends Service {
 				installIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				installIntent.setDataAndType(uri,
 						"application/vnd.android.package-archive");
+
 				mPendingIntent = PendingIntent.getActivity(
 						SoftUpdateService.this, 0, installIntent, 0);
-				mUpdateNotification.icon = android.R.drawable.stat_sys_download_done;
-				mUpdateNotification.setLatestEventInfo(SoftUpdateService.this,
-						mAppName, getString(R.string.kdmsp_down_soft_complete),
-						mPendingIntent);
-				mUpdateNotification.flags = Notification.FLAG_AUTO_CANCEL;
-				mUpdateNotificationManager.notify(0, mUpdateNotification);
+				NotificationCompat.Builder builder = new NotificationCompat.Builder(SoftUpdateService.this);
+				builder.setContentText(getString(R.string.kdmsp_down_soft_complete));
+				builder.setContentTitle(mAppName);
+				builder.setSmallIcon(android.R.drawable.stat_sys_download_done);
+				builder.setAutoCancel(true);
+				builder.setWhen(System.currentTimeMillis());
+				builder.setContentIntent(mPendingIntent);
+				Notification notification = builder.build();
+				mUpdateNotificationManager.notify(10, notification);
 				stopSelf();
 				mIsRunning = false;
 				break;

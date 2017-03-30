@@ -1,22 +1,15 @@
 package com.proj.androidlib.tool;
 
-import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.security.MessageDigest;
-import java.util.Collections;
-import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-import org.apache.http.conn.util.InetAddressUtils;
+//import org.apache.http.conn.util.InetAddressUtils;
 
 import android.text.TextUtils;
 
 /**
  * 字符串操作类
- * 
- * @author Ivan
- * @date 2013-4-25 下午2:00:04
  */
 public class StringHelper {
 	private static final int[] mWi = { 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10,
@@ -262,43 +255,6 @@ public class StringHelper {
 			e.printStackTrace();
 		}
 		return hexString.toString().toUpperCase();
-	}
-
-	/**
-	 * 获取手机的ip
-	 * 
-	 * @param isIPV4
-	 *            true ipv4,false ipv6
-	 * @return
-	 */
-	public static String getIPAddress(boolean isIPV4) {
-		try {
-			List<NetworkInterface> interfaces = Collections
-					.list(NetworkInterface.getNetworkInterfaces());
-			for (NetworkInterface intf : interfaces) {
-				List<InetAddress> addrs = Collections.list(intf
-						.getInetAddresses());
-				for (InetAddress addr : addrs) {
-					if (!addr.isLoopbackAddress()) {
-						String sAddr = addr.getHostAddress().toUpperCase();
-						boolean isIPv4 = InetAddressUtils.isIPv4Address(sAddr);
-						if (isIPV4) {
-							if (isIPv4)
-								return sAddr;
-						} else {
-							if (!isIPv4) {
-								int delim = sAddr.indexOf('%'); // drop ip6 port
-																// suffix
-								return delim < 0 ? sAddr : sAddr.substring(0,
-										delim);
-							}
-						}
-					}
-				}
-			}
-		} catch (Exception ex) {
-		} // for now eat exceptions
-		return "";
 	}
 
 	public static String TransformString(String str) {
